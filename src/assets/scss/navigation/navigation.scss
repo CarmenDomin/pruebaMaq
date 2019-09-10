@@ -1,0 +1,76 @@
+@import '../core/colors.scss';
+@import '../core/utils.scss';
+
+.navigation {
+  display: flex;
+  height: 40px;
+  line-height: 40px;
+
+  > * {
+    @include transition('color');
+
+    background-color: $grey-light;
+    border: 1px solid $grey;
+    color: $grey-dark;
+
+    &:not(:first-child) {
+      border-left-width: 0;
+    }
+
+    &:hover {
+      color: $black;
+    }
+  }
+}
+
+.navigation_button {
+  cursor: pointer;
+  outline: none;
+  width: 40px;
+}
+
+.navigation_tab {
+  box-sizing: border-box;
+  font-size: 14px;
+  overflow: hidden;
+  padding: 0 20px;
+  position: relative;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 440px;
+
+  &:nth-of-type(3) {
+    flex-grow: 1;
+  }
+
+  &:nth-last-of-type(-n + 2) {
+    background-color: $white;
+  }
+
+  &:not(:nth-last-of-type(-n + 2)) {
+    border-right-width: 0;
+
+    &:after, &:before {
+      content: '';
+      position: absolute;
+      right: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 20px 0 20px 10px;
+      border-color: transparent transparent transparent $grey;
+    }
+  
+    &:after {
+      right: 1px;
+      border-color: transparent transparent transparent $grey-light;
+    }
+  }
+  
+  &:nth-of-type(2) {
+    &:before {
+      border-color: $white $white $white $grey;
+    }
+  }
+}

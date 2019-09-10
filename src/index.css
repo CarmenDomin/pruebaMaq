@@ -1,3 +1,65 @@
-/* line 1, src/assets/scss/index.scss */
+/* line 4, src/assets/scss/navigation/navigation.scss */
+.navigation {
+  display: flex;
+  height: 40px;
+  line-height: 40px; }
+  /* line 9, src/assets/scss/navigation/navigation.scss */
+  .navigation > * {
+    transition: color .3s ease-out;
+    background-color: #eeeeee;
+    border: 1px solid #bbbbbb;
+    color: #777777; }
+    /* line 16, src/assets/scss/navigation/navigation.scss */
+    .navigation > *:not(:first-child) {
+      border-left-width: 0; }
+    /* line 20, src/assets/scss/navigation/navigation.scss */
+    .navigation > *:hover {
+      color: black; }
+
+/* line 26, src/assets/scss/navigation/navigation.scss */
+.navigation_button {
+  cursor: pointer;
+  outline: none;
+  width: 40px; }
+
+/* line 32, src/assets/scss/navigation/navigation.scss */
+.navigation_tab {
+  box-sizing: border-box;
+  font-size: 14px;
+  overflow: hidden;
+  padding: 0 20px;
+  position: relative;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 440px; }
+  /* line 43, src/assets/scss/navigation/navigation.scss */
+  .navigation_tab:nth-of-type(3) {
+    flex-grow: 1; }
+  /* line 47, src/assets/scss/navigation/navigation.scss */
+  .navigation_tab:nth-last-of-type(-n + 2) {
+    background-color: white; }
+  /* line 51, src/assets/scss/navigation/navigation.scss */
+  .navigation_tab:not(:nth-last-of-type(-n + 2)) {
+    border-right-width: 0; }
+    /* line 54, src/assets/scss/navigation/navigation.scss */
+    .navigation_tab:not(:nth-last-of-type(-n + 2)):after, .navigation_tab:not(:nth-last-of-type(-n + 2)):before {
+      content: '';
+      position: absolute;
+      right: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 20px 0 20px 10px;
+      border-color: transparent transparent transparent #bbbbbb; }
+    /* line 65, src/assets/scss/navigation/navigation.scss */
+    .navigation_tab:not(:nth-last-of-type(-n + 2)):after {
+      right: 1px;
+      border-color: transparent transparent transparent #eeeeee; }
+  /* line 72, src/assets/scss/navigation/navigation.scss */
+  .navigation_tab:nth-of-type(2):before {
+    border-color: white white white #bbbbbb; }
+
+/* line 3, src/assets/scss/index.scss */
 body {
   margin: 0; }
