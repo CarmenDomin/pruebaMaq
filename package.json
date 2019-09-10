@@ -1,0 +1,19 @@
+{
+  "name": "prueba-maq",
+  "version": "0.0.0",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "dev": "npm run sass & nodemon --watch src/index.html server.js",
+    "sass": "node-sass --include-path -watch scss src/assets/scss/index.scss src/index.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.0",
+    "node-sass": "^4.12.0"
+  }
+}
