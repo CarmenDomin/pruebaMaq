@@ -1,64 +1,79 @@
-/* line 4, src/assets/scss/navigation/navigation.scss */
+/* line 7, src/assets/scss/navigation/navigation.scss */
 .navigation {
   display: flex;
   height: 40px;
   line-height: 40px; }
-  /* line 9, src/assets/scss/navigation/navigation.scss */
-  .navigation > * {
-    transition: color .3s ease-out;
-    background-color: #eeeeee;
-    border: 1px solid #bbbbbb;
-    color: #777777; }
-    /* line 16, src/assets/scss/navigation/navigation.scss */
-    .navigation > *:not(:first-child) {
-      border-left-width: 0; }
-    /* line 20, src/assets/scss/navigation/navigation.scss */
-    .navigation > *:hover {
-      color: black; }
 
-/* line 26, src/assets/scss/navigation/navigation.scss */
+/* line 13, src/assets/scss/navigation/navigation.scss */
+.navigation_button,
+.navigation_tab {
+  transition: border-color .3s ease-out;
+  background-color: #eeeeee;
+  border: 1px solid #bbbbbb; }
+  /* line 20, src/assets/scss/navigation/navigation.scss */
+  .navigation_button:hover,
+  .navigation_tab:hover {
+    border-color: #777777; }
+    /* line 23, src/assets/scss/navigation/navigation.scss */
+    .navigation_button:hover .navigation-tab_arrow,
+    .navigation_tab:hover .navigation-tab_arrow {
+      border-left-color: #777777; }
+
+/* line 29, src/assets/scss/navigation/navigation.scss */
 .navigation_button {
   cursor: pointer;
   outline: none;
   width: 40px; }
 
-/* line 32, src/assets/scss/navigation/navigation.scss */
+/* line 35, src/assets/scss/navigation/navigation.scss */
 .navigation_tab {
+  border-width: 1px 0 1px 1px;
   box-sizing: border-box;
+  display: flex;
   font-size: 14px;
-  overflow: hidden;
-  padding: 0 20px;
-  position: relative;
+  padding-left: 20px;
   text-decoration: none;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  width: 440px; }
-  /* line 43, src/assets/scss/navigation/navigation.scss */
-  .navigation_tab:nth-of-type(3) {
-    flex-grow: 1; }
-  /* line 47, src/assets/scss/navigation/navigation.scss */
-  .navigation_tab:nth-last-of-type(-n + 2) {
-    background-color: white; }
-  /* line 51, src/assets/scss/navigation/navigation.scss */
-  .navigation_tab:not(:nth-last-of-type(-n + 2)) {
-    border-right-width: 0; }
+  width: 430px; }
+  /* line 44, src/assets/scss/navigation/navigation.scss */
+  .navigation_tab:nth-last-of-type(2) {
+    flex-grow: 1;
+    width: unset; }
+  /* line 49, src/assets/scss/navigation/navigation.scss */
+  .navigation_tab:nth-last-of-type(-n+2) {
+    background-color: white;
+    border-right-width: 1px;
+    width: 440px; }
     /* line 54, src/assets/scss/navigation/navigation.scss */
-    .navigation_tab:not(:nth-last-of-type(-n + 2)):after, .navigation_tab:not(:nth-last-of-type(-n + 2)):before {
-      content: '';
-      position: absolute;
-      right: 0;
-      width: 0;
-      height: 0;
-      border-style: solid;
-      border-width: 20px 0 20px 10px;
-      border-color: transparent transparent transparent #bbbbbb; }
-    /* line 65, src/assets/scss/navigation/navigation.scss */
-    .navigation_tab:not(:nth-last-of-type(-n + 2)):after {
-      right: 1px;
-      border-color: transparent transparent transparent #eeeeee; }
-  /* line 72, src/assets/scss/navigation/navigation.scss */
-  .navigation_tab:nth-of-type(2):before {
-    border-color: white white white #bbbbbb; }
+    .navigation_tab:nth-last-of-type(-n+2) .navigation-tab_arrow {
+      display: none; }
+
+/* line 60, src/assets/scss/navigation/navigation.scss */
+.navigation-tab_arrow {
+  transition: border-color .3s ease-out;
+  border-bottom: 19px solid transparent;
+  border-left: 10px solid #bbbbbb;
+  border-right: 10px solid transparent;
+  border-top: 19px solid transparent;
+  height: 0px;
+  position: relative;
+  right: -21px; }
+  /* line 71, src/assets/scss/navigation/navigation.scss */
+  .navigation-tab_arrow:after {
+    border-bottom: 19px solid transparent;
+    border-left: 10px solid #eeeeee;
+    border-right: 10px solid transparent;
+    border-top: 19px solid transparent;
+    content: '';
+    height: 0;
+    left: -11px;
+    position: absolute;
+    top: -19px; }
+
+/* line 84, src/assets/scss/navigation/navigation.scss */
+.navigation-tab_content {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
 
 /* line 3, src/assets/scss/index.scss */
 body {
