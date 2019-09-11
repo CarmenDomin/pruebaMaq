@@ -1,0 +1,36 @@
+@import '../core/colors.scss';
+
+.information_content {
+  background-color: $blue;
+  border-radius: 30px;
+  bottom: 0;
+  box-sizing: border-box;
+  color: white;
+  font-size: 18px;
+  margin: 60px;
+  opacity: 0.9;
+  padding: 40px;
+  position: absolute;
+  width: 480px;
+
+  h1 {
+    font-size: 30px;
+    margin-top: 0;
+  }
+}
+
+.information_figure {
+  background: url("/assets/img/background.jpg");
+  background-clip: content-box;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
+
+.information_disclaimer {
+  display: table;
+  font-size: 14px;
+  text-align: right;
+  width: 100%;
+}
+
