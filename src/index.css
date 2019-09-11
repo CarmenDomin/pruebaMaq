@@ -14,66 +14,63 @@
   .navigation_button:hover,
   .navigation_tab:hover {
     border-color: #777777; }
-    /* line 23, src/assets/scss/navigation/navigation.scss */
-    .navigation_button:hover .navigation-tab_arrow,
-    .navigation_tab:hover .navigation-tab_arrow {
-      border-left-color: #777777; }
+  /* line 25, src/assets/scss/navigation/navigation.scss */
+  .navigation_button:hover + .navigation_tab:before,
+  .navigation_tab:hover + .navigation_tab:before {
+    border-left-color: #777777; }
 
-/* line 29, src/assets/scss/navigation/navigation.scss */
+/* line 31, src/assets/scss/navigation/navigation.scss */
 .navigation_button {
   cursor: pointer;
   outline: none;
   width: 40px; }
 
-/* line 35, src/assets/scss/navigation/navigation.scss */
+/* line 37, src/assets/scss/navigation/navigation.scss */
 .navigation_tab {
-  border-width: 1px 0 1px 1px;
+  border-width: 1px 0;
   box-sizing: border-box;
-  display: flex;
   font-size: 14px;
+  overflow: hidden;
+  position: relative;
   padding-left: 20px;
   text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   width: 430px; }
-  /* line 44, src/assets/scss/navigation/navigation.scss */
-  .navigation_tab:nth-last-of-type(2) {
-    flex-grow: 1;
-    width: unset; }
   /* line 49, src/assets/scss/navigation/navigation.scss */
   .navigation_tab:nth-last-of-type(-n+2) {
     background-color: white;
     border-right-width: 1px;
     width: 440px; }
-    /* line 54, src/assets/scss/navigation/navigation.scss */
-    .navigation_tab:nth-last-of-type(-n+2) .navigation-tab_arrow {
-      display: none; }
-
-/* line 60, src/assets/scss/navigation/navigation.scss */
-.navigation-tab_arrow {
-  transition: border-color .3s ease-out;
-  border-bottom: 19px solid transparent;
-  border-left: 10px solid #bbbbbb;
-  border-right: 10px solid transparent;
-  border-top: 19px solid transparent;
-  height: 0px;
-  position: relative;
-  right: -21px; }
-  /* line 71, src/assets/scss/navigation/navigation.scss */
-  .navigation-tab_arrow:after {
-    border-bottom: 19px solid transparent;
+  /* line 55, src/assets/scss/navigation/navigation.scss */
+  .navigation_tab:nth-last-of-type(2) {
+    flex-grow: 1;
+    width: unset; }
+  /* line 60, src/assets/scss/navigation/navigation.scss */
+  .navigation_tab:before {
+    transition: border-color .3s ease-out;
+    border-bottom: 20px solid transparent;
+    border-left: 10px solid #bbbbbb;
+    border-right: 10px solid transparent;
+    border-top: 20px solid transparent;
+    content: '';
+    height: 0px;
+    left: 0;
+    position: absolute; }
+  /* line 73, src/assets/scss/navigation/navigation.scss */
+  .navigation_tab:after {
+    border-bottom: 20px solid transparent;
     border-left: 10px solid #eeeeee;
     border-right: 10px solid transparent;
-    border-top: 19px solid transparent;
+    border-top: 20px solid transparent;
     content: '';
     height: 0;
-    left: -11px;
+    left: -1px;
     position: absolute;
-    top: -19px; }
-
-/* line 84, src/assets/scss/navigation/navigation.scss */
-.navigation-tab_content {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap; }
+    top: 0; }
+  /* line 87, src/assets/scss/navigation/navigation.scss */
+  .navigation_tab:first-of-type:after, .navigation_tab:first-of-type:before, .navigation_tab:last-of-type:after, .navigation_tab:last-of-type:before {
+    content: none; }
 
 /* line 3, src/assets/scss/index.scss */
 body {

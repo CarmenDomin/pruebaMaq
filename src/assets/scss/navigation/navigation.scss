@@ -19,8 +19,10 @@ $width-arrow: 10px;
 
   &:hover {
     border-color: $grey-dark;
+  }
 
-    .navigation-tab_arrow {
+  &:hover + .navigation_tab {
+    &:before {
       border-left-color: $grey-dark;
     }
   }
@@ -33,56 +35,58 @@ $width-arrow: 10px;
 }
 
 .navigation_tab {
-  border-width: 1px 0 1px 1px;
+  border-width: 1px 0;
   box-sizing: border-box;
-  display: flex;
   font-size: 14px;
+  overflow: hidden;
+  position: relative;
   padding-left: 20px;
   text-decoration: none;
+  text-overflow: ellipsis;
+  white-space: nowrap;
   width: 440px - $width-arrow;
+
+  &:nth-last-of-type(-n+2) {
+    background-color: $white;
+    border-right-width: 1px;
+    width: 440px;
+  }
 
   &:nth-last-of-type(2) {
     flex-grow: 1;
     width: unset;
   }
 
-  &:nth-last-of-type(-n+2) {
-    background-color: $white;
-    border-right-width: 1px;
-    width: 440px;
+  &:before {
+    @include transition('border-color');
 
-    .navigation-tab_arrow {
-      display: none;
-    }
+    border-bottom: $height/2 solid transparent;
+    border-left: $width-arrow solid $grey;
+    border-right: $width-arrow solid transparent;
+    border-top: $height/2 solid transparent;
+    content: '';
+    height: 0px;
+    left: 0;
+    position: absolute;
   }
-}
-
-.navigation-tab_arrow {
-  @include transition('border-color');
-
-  border-bottom: ($height/2 - 1px) solid transparent;
-  border-left: $width-arrow solid $grey;
-  border-right: $width-arrow solid transparent;
-  border-top: ($height/2 - 1px) solid transparent;
-  height: 0px;
-  position: relative;
-  right: -($width-arrow * 2 + 1px);
 
   &:after {
-    border-bottom: ($height/2 - 1px) solid transparent;
+    border-bottom: $height/2 solid transparent;
     border-left: $width-arrow solid $grey-light;
     border-right: $width-arrow solid transparent;
-    border-top: ($height/2 - 1px) solid transparent;
+    border-top: $height/2 solid transparent;
     content: '';
     height: 0;
-    left: -($width-arrow + 1px);
+    left: -1px;
     position: absolute;
-    top: -($height/2 - 1px);
+    top: 0;
   }
-}
 
-.navigation-tab_content {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  &:first-of-type,
+  &:last-of-type {
+    &:after,
+    &:before {
+      content: none;
+    }
+  }
 }
