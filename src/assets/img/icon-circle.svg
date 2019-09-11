@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
+    <g fill="none" fill-rule="evenodd">
+        <g stroke="#EEE" stroke-linecap="square" stroke-width="3">
+            <path d="M-12.375 54.678L10.39 8M10.39 13.678L-12.374-33"/>
+        </g>
+        <path fill="#EEE" d="M-11-11h40v40h-40z"/>
+        <circle cx="9" cy="9" r="8" fill="#BBB"/>
+    </g>
+</svg>

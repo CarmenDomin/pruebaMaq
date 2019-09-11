@@ -1,24 +1,26 @@
-/* line 3, src/assets/scss/layout/layout.scss */
-.layout {
-  height: calc(100vh - 40px);
-  display: flex;
-  flex-direction: row;
-  padding: 30px 0 40px 20px;
-  box-sizing: border-box; }
-
-/* line 11, src/assets/scss/layout/layout.scss */
-.layout_menu {
-  width: 100px; }
-
-/* line 15, src/assets/scss/layout/layout.scss */
-.layout_content {
-  flex-grow: 1;
+/* line 3, src/assets/scss/information/information.scss */
+.information {
   position: relative; }
-nt h1 {
+
+/* line 7, src/assets/scss/information/information.scss */
+.information_content {
+  background-color: #0082c5;
+  border-radius: 30px;
+  bottom: 0;
+  box-sizing: border-box;
+  color: white;
+  font-size: 18px;
+  margin: 60px;
+  opacity: 0.9;
+  padding: 40px;
+  position: absolute;
+  width: 480px; }
+  /* line 20, src/assets/scss/information/information.scss */
+  .information_content h1 {
     font-size: 30px;
     margin-top: 0; }
 
-/* line 22, src/assets/scss/information/information.scss */
+/* line 26, src/assets/scss/information/information.scss */
 .information_figure {
   background: url("/assets/img/background.jpg");
   background-clip: content-box;
@@ -26,7 +28,7 @@ nt h1 {
   background-size: cover;
   height: 100%; }
 
-/* line 30, src/assets/scss/information/information.scss */
+/* line 34, src/assets/scss/information/information.scss */
 .information_disclaimer {
   display: table;
   font-size: 14px;
@@ -47,8 +49,104 @@ nt h1 {
 
 /* line 15, src/assets/scss/layout/layout.scss */
 .layout_content {
-  flex-grow: 1;
-  position: relative; }
+  flex-grow: 1; }
+
+/* line 4, src/assets/scss/menu/menu.scss */
+.menu {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px; }
+
+/* line 11, src/assets/scss/menu/menu.scss */
+.menu_task {
+  transition: border-color .3s ease-out;
+  background-color: #eeeeee;
+  background-image: url("/assets/img/icon-circle.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  cursor: pointer;
+  height: 40px;
+  outline: none;
+  width: 40px; }
+  /* line 25, src/assets/scss/menu/menu.scss */
+  .menu_task:hover {
+    border-color: #bbbbbb; }
+  /* line 29, src/assets/scss/menu/menu.scss */
+  .menu_task.menu_task--flag {
+    background-image: url("/assets/img/icon-flag.svg"); }
+  /* line 33, src/assets/scss/menu/menu.scss */
+  .menu_task.menu_task--star {
+    background-image: url("/assets/img/icon-star.svg"); }
+  /* line 37, src/assets/scss/menu/menu.scss */
+  .menu_task.menu_task--story {
+    background-image: url("/assets/img/icon-story.svg"); }
+  /* line 41, src/assets/scss/menu/menu.scss */
+  .menu_task:after {
+    background-color: #eeeeee;
+    content: '';
+    height: 3px;
+    position: absolute;
+    width: 45px;
+    z-index: -1; }
+  /* line 50, src/assets/scss/menu/menu.scss */
+  .menu_task:nth-child(even) {
+    margin-left: 20px; }
+    /* line 53, src/assets/scss/menu/menu.scss */
+    .menu_task:nth-child(even):after {
+      transform: rotate(120deg);
+      transform-origin: 0px; }
+  /* line 59, src/assets/scss/menu/menu.scss */
+  .menu_task:nth-child(odd):after {
+    transform: rotate(60deg);
+    transform-origin: 0px; }
+  /* line 64, src/assets/scss/menu/menu.scss */
+  .menu_task:last-child:after {
+    content: none; }
+
+/* line 69, src/assets/scss/menu/menu.scss */
+.menu_task--seen {
+  background-color: #78af45;
+  background-image: url("/assets/img/icon-circle--seen.svg"); }
+  /* line 73, src/assets/scss/menu/menu.scss */
+  .menu_task--seen.menu_task--flag {
+    background-image: url("/assets/img/icon-flag--seen.svg"); }
+  /* line 77, src/assets/scss/menu/menu.scss */
+  .menu_task--seen.menu_task--star {
+    background-image: url("/assets/img/icon-star--seen.svg"); }
+  /* line 81, src/assets/scss/menu/menu.scss */
+  .menu_task--seen.menu_task--story {
+    background-image: url("/assets/img/icon-story--seen.svg"); }
+
+/* line 86, src/assets/scss/menu/menu.scss */
+.menu_task--seeing {
+  background-color: #4c6f2c;
+  background-image: url("/assets/img/icon-circle--seeing.svg"); }
+  /* line 90, src/assets/scss/menu/menu.scss */
+  .menu_task--seeing.menu_task--flag {
+    background-image: url("/assets/img/icon-flag--seeing.svg"); }
+  /* line 94, src/assets/scss/menu/menu.scss */
+  .menu_task--seeing.menu_task--star {
+    background-image: url("/assets/img/icon-star--seeing.svg"); }
+  /* line 98, src/assets/scss/menu/menu.scss */
+  .menu_task--seeing.menu_task--story {
+    background-image: url("/assets/img/icon-story--seeing.svg"); }
+
+/* line 103, src/assets/scss/menu/menu.scss */
+.menu_task--pending {
+  background-color: #ecab41;
+  background-image: url("/assets/img/icon-circle--pending.svg"); }
+  /* line 107, src/assets/scss/menu/menu.scss */
+  .menu_task--pending.menu_task--flag {
+    background-image: url("/assets/img/icon-flag--pending.svg"); }
+  /* line 111, src/assets/scss/menu/menu.scss */
+  .menu_task--pending.menu_task--star {
+    background-image: url("/assets/img/icon-star--pending.svg"); }
+  /* line 115, src/assets/scss/menu/menu.scss */
+  .menu_task--pending.menu_task--story {
+    background-image: url("/assets/img/icon-story--pending.svg"); }
 
 /* line 7, src/assets/scss/navigation/navigation.scss */
 .navigation {
@@ -124,6 +222,6 @@ nt h1 {
   .navigation_tab:first-of-type:after, .navigation_tab:first-of-type:before, .navigation_tab:last-of-type:after, .navigation_tab:last-of-type:before {
     content: none; }
 
-/* line 5, src/assets/scss/index.scss */
+/* line 6, src/assets/scss/index.scss */
 body {
   margin: 0; }

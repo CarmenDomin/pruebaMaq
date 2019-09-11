@@ -1,0 +1,121 @@
+@import '../core/colors.scss';
+@import '../core/utils.scss';
+
+.menu {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+}
+
+.menu_task {
+  @include transition('border-color');
+
+  background-color: $grey-light;
+  background-image: url("/assets/img/icon-circle.svg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  border: 2px solid transparent;
+  border-radius: 50px;
+  cursor: pointer;
+  height: 40px;
+  outline: none;
+  width: 40px;
+
+  &:hover {
+    border-color: $grey;
+  }
+
+  &.menu_task--flag {
+    background-image: url("/assets/img/icon-flag.svg");
+  }
+
+  &.menu_task--star {
+    background-image: url("/assets/img/icon-star.svg");
+  }
+
+  &.menu_task--story {
+    background-image: url("/assets/img/icon-story.svg");
+  }
+
+  &:after {
+    background-color: $grey-light;
+    content: '';
+    height: 3px;
+    position: absolute;
+    width: 45px;
+    z-index: -1;
+  }
+
+  &:nth-child(even) {
+    margin-left: 20px;
+
+    &:after {
+      transform: rotate(120deg);
+      transform-origin: 0px;
+    }
+  }
+
+  &:nth-child(odd):after {
+    transform: rotate(60deg);
+    transform-origin: 0px;
+  }
+
+  &:last-child:after {
+    content: none;
+  }
+}
+
+.menu_task--seen {
+  background-color: $green;
+  background-image: url("/assets/img/icon-circle--seen.svg");
+
+  &.menu_task--flag {
+    background-image: url("/assets/img/icon-flag--seen.svg");
+  }
+
+  &.menu_task--star {
+    background-image: url("/assets/img/icon-star--seen.svg");
+  }
+
+  &.menu_task--story {
+    background-image: url("/assets/img/icon-story--seen.svg");
+  }
+}
+
+.menu_task--seeing {
+  background-color: $green-dark;
+  background-image: url("/assets/img/icon-circle--seeing.svg");
+
+  &.menu_task--flag {
+    background-image: url("/assets/img/icon-flag--seeing.svg");
+  }
+
+  &.menu_task--star {
+    background-image: url("/assets/img/icon-star--seeing.svg");
+  }
+
+  &.menu_task--story {
+    background-image: url("/assets/img/icon-story--seeing.svg");
+  }
+}
+
+.menu_task--pending {
+  background-color: $orange;
+  background-image: url("/assets/img/icon-circle--pending.svg");
+
+  &.menu_task--flag {
+    background-image: url("/assets/img/icon-flag--pending.svg");
+  }
+
+  &.menu_task--star {
+    background-image: url("/assets/img/icon-star--pending.svg");
+  }
+
+  &.menu_task--story {
+    background-image: url("/assets/img/icon-story--pending.svg");
+  }
+}
+
+
+
