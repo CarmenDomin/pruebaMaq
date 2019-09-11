@@ -1,13 +1,13 @@
 @import '../core/colors.scss';
+@import '../core/dimensions.scss';
 @import '../core/utils.scss';
 
-$height: 40px;
 $width-arrow: 10px;
 
 .navigation {
   display: flex;
-  height: $height;
-  line-height: $height;
+  height: $navigation-height;
+  line-height: $navigation-height;
 }
 
 .navigation_button,
@@ -60,10 +60,10 @@ $width-arrow: 10px;
   &:before {
     @include transition('border-color');
 
-    border-bottom: $height/2 solid transparent;
+    border-bottom: $navigation-height/2 solid transparent;
     border-left: $width-arrow solid $grey;
     border-right: $width-arrow solid transparent;
-    border-top: $height/2 solid transparent;
+    border-top: $navigation-height/2 solid transparent;
     content: '';
     height: 0px;
     left: 0;
@@ -71,10 +71,10 @@ $width-arrow: 10px;
   }
 
   &:after {
-    border-bottom: $height/2 solid transparent;
+    border-bottom: $navigation-height/2 solid transparent;
     border-left: $width-arrow solid $grey-light;
     border-right: $width-arrow solid transparent;
-    border-top: $height/2 solid transparent;
+    border-top: $navigation-height/2 solid transparent;
     content: '';
     height: 0;
     left: -1px;
