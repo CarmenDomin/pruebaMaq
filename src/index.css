@@ -1,3 +1,19 @@
+/* line 1, src/assets/scss/layout/layout.scss */
+.layout {
+  height: calc(100vh - 40px);
+  display: flex;
+  flex-direction: row;
+  padding: 30px 0 40px 20px;
+  box-sizing: border-box; }
+
+/* line 9, src/assets/scss/layout/layout.scss */
+.layout_menu {
+  width: 100px; }
+
+/* line 13, src/assets/scss/layout/layout.scss */
+.layout_content {
+  flex-grow: 1; }
+
 /* line 7, src/assets/scss/navigation/navigation.scss */
 .navigation {
   display: flex;
@@ -72,6 +88,6 @@
   .navigation_tab:first-of-type:after, .navigation_tab:first-of-type:before, .navigation_tab:last-of-type:after, .navigation_tab:last-of-type:before {
     content: none; }
 
-/* line 3, src/assets/scss/index.scss */
+/* line 4, src/assets/scss/index.scss */
 body {
   margin: 0; }

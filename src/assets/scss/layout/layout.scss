@@ -1,0 +1,15 @@
+.layout {
+  height: calc(100vh - 40px);
+  display: flex;
+  flex-direction: row;
+  padding: 30px 0 40px 20px;
+  box-sizing: border-box;
+}
+
+.layout_menu {
+  width: 100px;
+}
+
+.layout_content {
+  flex-grow: 1;
+}
