@@ -5,26 +5,69 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  margin-bottom: 100px;
   padding: 0 20px;
+
+  button {
+    @include transition('border-color');
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    cursor: pointer;
+    outline: none;
+
+    &:hover {
+      border-color: $grey;
+    }
+  }
+}
+
+.menu_action {
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  position: absolute;
+}
+
+.menu_action--down {
+  background-color: $blue-dark;
+  background-image: url("/assets/img/icon-down.svg");
+  height: 60px;
+  width: 60px;
+}
+
+.menu_action--scroll {
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff);
+  height: 80px;
+  width: 60px;
+
+  &:after {
+    background: url("/assets/img/icon-scroll.svg") center center no-repeat;
+    content: '';
+    height: 60px;
+    position: absolute;
+    top: 50px;
+    width: 60px;
+  }
+}
+
+.menu_action--up {
+  background-color: $blue-dark;
+  background-image: url("/assets/img/icon-up.svg");
+  height: 40px;
+  margin: 10px 0;
+  width: 40px;
 }
 
 .menu_task {
-  @include transition('border-color');
-
   background-color: $grey-light;
   background-image: url("/assets/img/icon-circle.svg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  border: 2px solid transparent;
-  border-radius: 50px;
-  cursor: pointer;
   height: 40px;
-  outline: none;
   width: 40px;
-
-  &:hover {
-    border-color: $grey;
-  }
 
   &.menu_task--flag {
     background-image: url("/assets/img/icon-flag.svg");
@@ -47,7 +90,11 @@
     z-index: -1;
   }
 
-  &:nth-child(even) {
+  &:nth-last-of-type(1):after {
+    content: none;
+  }
+
+  &:nth-of-type(even) {
     margin-left: 20px;
 
     &:after {
@@ -56,13 +103,9 @@
     }
   }
 
-  &:nth-child(odd):after {
+  &:nth-of-type(odd):after {
     transform: rotate(60deg);
     transform-origin: 0px;
-  }
-
-  &:last-child:after {
-    content: none;
   }
 }
 
@@ -116,6 +159,3 @@
     background-image: url("/assets/img/icon-story--pending.svg");
   }
 }
-
-
-

@@ -56,34 +56,75 @@
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+  margin-bottom: 100px;
   padding: 0 20px; }
+  /* line 11, src/assets/scss/menu/menu.scss */
+  .menu button {
+    transition: border-color .3s ease-out;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border: 2px solid transparent;
+    border-radius: 50px;
+    cursor: pointer;
+    outline: none; }
+    /* line 21, src/assets/scss/menu/menu.scss */
+    .menu button:hover {
+      border-color: #bbbbbb; }
 
-/* line 11, src/assets/scss/menu/menu.scss */
+/* line 27, src/assets/scss/menu/menu.scss */
+.menu_action {
+  align-items: center;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  position: absolute; }
+
+/* line 36, src/assets/scss/menu/menu.scss */
+.menu_action--down {
+  background-color: #1681c1;
+  background-image: url("/assets/img/icon-down.svg");
+  height: 60px;
+  width: 60px; }
+
+/* line 43, src/assets/scss/menu/menu.scss */
+.menu_action--scroll {
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff);
+  height: 80px;
+  width: 60px; }
+  /* line 48, src/assets/scss/menu/menu.scss */
+  .menu_action--scroll:after {
+    background: url("/assets/img/icon-scroll.svg") center center no-repeat;
+    content: '';
+    height: 60px;
+    position: absolute;
+    top: 50px;
+    width: 60px; }
+
+/* line 58, src/assets/scss/menu/menu.scss */
+.menu_action--up {
+  background-color: #1681c1;
+  background-image: url("/assets/img/icon-up.svg");
+  height: 40px;
+  margin: 10px 0;
+  width: 40px; }
+
+/* line 66, src/assets/scss/menu/menu.scss */
 .menu_task {
-  transition: border-color .3s ease-out;
   background-color: #eeeeee;
   background-image: url("/assets/img/icon-circle.svg");
-  background-position: center center;
-  background-repeat: no-repeat;
-  border: 2px solid transparent;
-  border-radius: 50px;
-  cursor: pointer;
   height: 40px;
-  outline: none;
   width: 40px; }
-  /* line 25, src/assets/scss/menu/menu.scss */
-  .menu_task:hover {
-    border-color: #bbbbbb; }
-  /* line 29, src/assets/scss/menu/menu.scss */
+  /* line 72, src/assets/scss/menu/menu.scss */
   .menu_task.menu_task--flag {
     background-image: url("/assets/img/icon-flag.svg"); }
-  /* line 33, src/assets/scss/menu/menu.scss */
+  /* line 76, src/assets/scss/menu/menu.scss */
   .menu_task.menu_task--star {
     background-image: url("/assets/img/icon-star.svg"); }
-  /* line 37, src/assets/scss/menu/menu.scss */
+  /* line 80, src/assets/scss/menu/menu.scss */
   .menu_task.menu_task--story {
     background-image: url("/assets/img/icon-story.svg"); }
-  /* line 41, src/assets/scss/menu/menu.scss */
+  /* line 84, src/assets/scss/menu/menu.scss */
   .menu_task:after {
     background-color: #eeeeee;
     content: '';
@@ -91,60 +132,60 @@
     position: absolute;
     width: 45px;
     z-index: -1; }
-  /* line 50, src/assets/scss/menu/menu.scss */
-  .menu_task:nth-child(even) {
+  /* line 93, src/assets/scss/menu/menu.scss */
+  .menu_task:nth-last-of-type(1):after {
+    content: none; }
+  /* line 97, src/assets/scss/menu/menu.scss */
+  .menu_task:nth-of-type(even) {
     margin-left: 20px; }
-    /* line 53, src/assets/scss/menu/menu.scss */
-    .menu_task:nth-child(even):after {
+    /* line 100, src/assets/scss/menu/menu.scss */
+    .menu_task:nth-of-type(even):after {
       transform: rotate(120deg);
       transform-origin: 0px; }
-  /* line 59, src/assets/scss/menu/menu.scss */
-  .menu_task:nth-child(odd):after {
+  /* line 106, src/assets/scss/menu/menu.scss */
+  .menu_task:nth-of-type(odd):after {
     transform: rotate(60deg);
     transform-origin: 0px; }
-  /* line 64, src/assets/scss/menu/menu.scss */
-  .menu_task:last-child:after {
-    content: none; }
 
-/* line 69, src/assets/scss/menu/menu.scss */
+/* line 112, src/assets/scss/menu/menu.scss */
 .menu_task--seen {
   background-color: #78af45;
   background-image: url("/assets/img/icon-circle--seen.svg"); }
-  /* line 73, src/assets/scss/menu/menu.scss */
+  /* line 116, src/assets/scss/menu/menu.scss */
   .menu_task--seen.menu_task--flag {
     background-image: url("/assets/img/icon-flag--seen.svg"); }
-  /* line 77, src/assets/scss/menu/menu.scss */
+  /* line 120, src/assets/scss/menu/menu.scss */
   .menu_task--seen.menu_task--star {
     background-image: url("/assets/img/icon-star--seen.svg"); }
-  /* line 81, src/assets/scss/menu/menu.scss */
+  /* line 124, src/assets/scss/menu/menu.scss */
   .menu_task--seen.menu_task--story {
     background-image: url("/assets/img/icon-story--seen.svg"); }
 
-/* line 86, src/assets/scss/menu/menu.scss */
+/* line 129, src/assets/scss/menu/menu.scss */
 .menu_task--seeing {
   background-color: #4c6f2c;
   background-image: url("/assets/img/icon-circle--seeing.svg"); }
-  /* line 90, src/assets/scss/menu/menu.scss */
+  /* line 133, src/assets/scss/menu/menu.scss */
   .menu_task--seeing.menu_task--flag {
     background-image: url("/assets/img/icon-flag--seeing.svg"); }
-  /* line 94, src/assets/scss/menu/menu.scss */
+  /* line 137, src/assets/scss/menu/menu.scss */
   .menu_task--seeing.menu_task--star {
     background-image: url("/assets/img/icon-star--seeing.svg"); }
-  /* line 98, src/assets/scss/menu/menu.scss */
+  /* line 141, src/assets/scss/menu/menu.scss */
   .menu_task--seeing.menu_task--story {
     background-image: url("/assets/img/icon-story--seeing.svg"); }
 
-/* line 103, src/assets/scss/menu/menu.scss */
+/* line 146, src/assets/scss/menu/menu.scss */
 .menu_task--pending {
   background-color: #ecab41;
   background-image: url("/assets/img/icon-circle--pending.svg"); }
-  /* line 107, src/assets/scss/menu/menu.scss */
+  /* line 150, src/assets/scss/menu/menu.scss */
   .menu_task--pending.menu_task--flag {
     background-image: url("/assets/img/icon-flag--pending.svg"); }
-  /* line 111, src/assets/scss/menu/menu.scss */
+  /* line 154, src/assets/scss/menu/menu.scss */
   .menu_task--pending.menu_task--star {
     background-image: url("/assets/img/icon-star--pending.svg"); }
-  /* line 115, src/assets/scss/menu/menu.scss */
+  /* line 158, src/assets/scss/menu/menu.scss */
   .menu_task--pending.menu_task--story {
     background-image: url("/assets/img/icon-story--pending.svg"); }
 
