@@ -159,23 +159,24 @@
 .navigation_tab {
   transition: border-color .3s ease-out;
   background-color: #eeeeee;
-  border: 1px solid #bbbbbb; }
-  /* line 20, src/assets/scss/navigation/navigation.scss */
+  border: 1px solid #bbbbbb;
+  color: #777777; }
+  /* line 21, src/assets/scss/navigation/navigation.scss */
   .navigation_button:hover,
   .navigation_tab:hover {
     border-color: #777777; }
-  /* line 25, src/assets/scss/navigation/navigation.scss */
+  /* line 26, src/assets/scss/navigation/navigation.scss */
   .navigation_button:hover + .navigation_tab:before,
   .navigation_tab:hover + .navigation_tab:before {
     border-left-color: #777777; }
 
-/* line 31, src/assets/scss/navigation/navigation.scss */
+/* line 32, src/assets/scss/navigation/navigation.scss */
 .navigation_button {
   cursor: pointer;
   outline: none;
   width: 40px; }
 
-/* line 37, src/assets/scss/navigation/navigation.scss */
+/* line 38, src/assets/scss/navigation/navigation.scss */
 .navigation_tab {
   border-width: 1px 0;
   box-sizing: border-box;
@@ -187,16 +188,16 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   width: 430px; }
-  /* line 49, src/assets/scss/navigation/navigation.scss */
+  /* line 50, src/assets/scss/navigation/navigation.scss */
   .navigation_tab:nth-last-of-type(-n+2) {
     background-color: white;
     border-right-width: 1px;
     width: 440px; }
-  /* line 55, src/assets/scss/navigation/navigation.scss */
+  /* line 56, src/assets/scss/navigation/navigation.scss */
   .navigation_tab:nth-last-of-type(2) {
     flex-grow: 1;
     width: unset; }
-  /* line 60, src/assets/scss/navigation/navigation.scss */
+  /* line 61, src/assets/scss/navigation/navigation.scss */
   .navigation_tab:before {
     transition: border-color .3s ease-out;
     border-bottom: 20px solid transparent;
@@ -207,7 +208,7 @@
     height: 0px;
     left: 0;
     position: absolute; }
-  /* line 73, src/assets/scss/navigation/navigation.scss */
+  /* line 74, src/assets/scss/navigation/navigation.scss */
   .navigation_tab:after {
     border-bottom: 20px solid transparent;
     border-left: 10px solid #eeeeee;
@@ -218,7 +219,7 @@
     left: -1px;
     position: absolute;
     top: 0; }
-  /* line 87, src/assets/scss/navigation/navigation.scss */
+  /* line 88, src/assets/scss/navigation/navigation.scss */
   .navigation_tab:first-of-type:after, .navigation_tab:first-of-type:before, .navigation_tab:last-of-type:after, .navigation_tab:last-of-type:before {
     content: none; }
 
