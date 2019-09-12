@@ -1,3 +1,10 @@
+// VIEWPORTS
+@mixin small-viewport {
+  @media only screen and (max-width: 1024px) {
+    @content;
+  }
+}
+
 // TRANSITION
 @mixin transition($properties...) {
   $result: '';

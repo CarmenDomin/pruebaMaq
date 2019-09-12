@@ -1,4 +1,5 @@
 @import '../core/colors.scss';
+@import '../core/utils.scss';
 
 .information {
   padding-left: 20px;
@@ -37,4 +38,16 @@
   font-size: 14px;
   text-align: right;
   width: 100%;
+}
+
+// small viewport
+@include small-viewport {
+  .information_content {
+    margin: 40px;
+    width: 373px;
+  }
+
+  .information_figure {
+    background-position: 50%;
+  }
 }

@@ -20,12 +20,12 @@ section {
 section {
   flex-grow: 1; }
 
-/* line 3, src/assets/scss/information/information.scss */
+/* line 4, src/assets/scss/information/information.scss */
 .information {
   padding-left: 20px;
   position: relative; }
 
-/* line 8, src/assets/scss/information/information.scss */
+/* line 9, src/assets/scss/information/information.scss */
 .information_content {
   background-color: #0082c5;
   border-radius: 30px;
@@ -38,12 +38,12 @@ section {
   padding: 40px;
   position: absolute;
   width: 480px; }
-  /* line 21, src/assets/scss/information/information.scss */
+  /* line 22, src/assets/scss/information/information.scss */
   .information_content h1 {
     font-size: 30px;
     margin-top: 0; }
 
-/* line 27, src/assets/scss/information/information.scss */
+/* line 28, src/assets/scss/information/information.scss */
 .information_figure {
   background: url("/assets/img/background.jpg");
   background-clip: content-box;
@@ -51,12 +51,21 @@ section {
   background-size: cover;
   height: 100%; }
 
-/* line 35, src/assets/scss/information/information.scss */
+/* line 36, src/assets/scss/information/information.scss */
 .information_disclaimer {
   display: table;
   font-size: 14px;
   text-align: right;
   width: 100%; }
+
+@media only screen and (max-width: 1024px) {
+  /* line 45, src/assets/scss/information/information.scss */
+  .information_content {
+    margin: 40px;
+    width: 373px; }
+  /* line 50, src/assets/scss/information/information.scss */
+  .information_figure {
+    background-position: 50%; } }
 
 /* line 4, src/assets/scss/menu/menu.scss */
 .menu {
@@ -334,3 +343,11 @@ section {
   right: 4px;
   top: 4px;
   width: 16px; }
+
+@media only screen and (max-width: 1024px) {
+  /* line 112, src/assets/scss/navigation/navigation.scss */
+  .nav_tab {
+    width: 194px; }
+    /* line 115, src/assets/scss/navigation/navigation.scss */
+    .nav_tab:nth-last-of-type(-n+2) {
+      width: 204px; } }

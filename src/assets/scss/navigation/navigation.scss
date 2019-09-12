@@ -106,3 +106,14 @@ $width-arrow: 10px;
   top: 4px;
   width: 16px;
 }
+
+// small viewport
+@include small-viewport {
+  .nav_tab {
+    width: 204px - $width-arrow;
+  
+    &:nth-last-of-type(-n+2) {
+      width: 204px;
+    }
+  }
+}
