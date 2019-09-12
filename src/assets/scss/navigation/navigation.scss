@@ -4,38 +4,40 @@
 
 $width-arrow: 10px;
 
-.navigation {
+.nav {
   display: flex;
   height: $navigation-height;
   line-height: $navigation-height;
 }
 
-.navigation_button,
-.navigation_tab {
+.nav_button,
+.nav_tab {
   @include transition('border-color');
 
   background-color: $grey-light;
   border: 1px solid $grey;
   color: $grey-dark;
+  position: relative;
 
   &:hover {
     border-color: $grey-dark;
   }
 
-  &:hover + .navigation_tab {
+  &:hover + .nav_tab {
     &:before {
       border-left-color: $grey-dark;
     }
   }
 }
 
-.navigation_button {
+.nav_button {
   cursor: pointer;
+  min-width: 40px;
   outline: none;
-  width: 40px;
 }
 
-.navigation_tab {
+.nav_tab {
+  background: $grey-light;
   border-width: 1px 0;
   box-sizing: border-box;
   font-size: 14px;
@@ -45,17 +47,17 @@ $width-arrow: 10px;
   text-decoration: none;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: 440px - $width-arrow;
+  min-width: 440px - $width-arrow;
 
   &:nth-last-of-type(-n+2) {
-    background-color: $white;
+    background: $white;
     border-right-width: 1px;
-    width: 440px;
+    min-width: 440px;
   }
 
   &:nth-last-of-type(2) {
     flex-grow: 1;
-    width: unset;
+    min-width: 10px;
   }
 
   &:before {
@@ -90,4 +92,17 @@ $width-arrow: 10px;
       content: none;
     }
   }
+}
+
+.nav-button_notifications {
+  background-color: $blue-dark;
+  border-radius: 50px;
+  color: $white;
+  font-size: 10px;
+  height: 16px;
+  line-height: 16px;
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  width: 16px;
 }

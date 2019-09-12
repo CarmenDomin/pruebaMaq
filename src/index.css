@@ -190,35 +190,37 @@
     background-image: url("/assets/img/icon-story--pending.svg"); }
 
 /* line 7, src/assets/scss/navigation/navigation.scss */
-.navigation {
+.nav {
   display: flex;
   height: 40px;
   line-height: 40px; }
 
 /* line 13, src/assets/scss/navigation/navigation.scss */
-.navigation_button,
-.navigation_tab {
+.nav_button,
+.nav_tab {
   transition: border-color .3s ease-out;
   background-color: #eeeeee;
   border: 1px solid #bbbbbb;
-  color: #777777; }
-  /* line 21, src/assets/scss/navigation/navigation.scss */
-  .navigation_button:hover,
-  .navigation_tab:hover {
+  color: #777777;
+  position: relative; }
+  /* line 22, src/assets/scss/navigation/navigation.scss */
+  .nav_button:hover,
+  .nav_tab:hover {
     border-color: #777777; }
-  /* line 26, src/assets/scss/navigation/navigation.scss */
-  .navigation_button:hover + .navigation_tab:before,
-  .navigation_tab:hover + .navigation_tab:before {
+  /* line 27, src/assets/scss/navigation/navigation.scss */
+  .nav_button:hover + .nav_tab:before,
+  .nav_tab:hover + .nav_tab:before {
     border-left-color: #777777; }
 
-/* line 32, src/assets/scss/navigation/navigation.scss */
-.navigation_button {
+/* line 33, src/assets/scss/navigation/navigation.scss */
+.nav_button {
   cursor: pointer;
-  outline: none;
-  width: 40px; }
+  min-width: 40px;
+  outline: none; }
 
-/* line 38, src/assets/scss/navigation/navigation.scss */
-.navigation_tab {
+/* line 39, src/assets/scss/navigation/navigation.scss */
+.nav_tab {
+  background: #eeeeee;
   border-width: 1px 0;
   box-sizing: border-box;
   font-size: 14px;
@@ -228,18 +230,18 @@
   text-decoration: none;
   text-overflow: ellipsis;
   white-space: nowrap;
-  width: 430px; }
-  /* line 50, src/assets/scss/navigation/navigation.scss */
-  .navigation_tab:nth-last-of-type(-n+2) {
-    background-color: white;
+  min-width: 430px; }
+  /* line 52, src/assets/scss/navigation/navigation.scss */
+  .nav_tab:nth-last-of-type(-n+2) {
+    background: white;
     border-right-width: 1px;
-    width: 440px; }
-  /* line 56, src/assets/scss/navigation/navigation.scss */
-  .navigation_tab:nth-last-of-type(2) {
+    min-width: 440px; }
+  /* line 58, src/assets/scss/navigation/navigation.scss */
+  .nav_tab:nth-last-of-type(2) {
     flex-grow: 1;
-    width: unset; }
-  /* line 61, src/assets/scss/navigation/navigation.scss */
-  .navigation_tab:before {
+    min-width: 10px; }
+  /* line 63, src/assets/scss/navigation/navigation.scss */
+  .nav_tab:before {
     transition: border-color .3s ease-out;
     border-bottom: 20px solid transparent;
     border-left: 10px solid #bbbbbb;
@@ -249,8 +251,8 @@
     height: 0px;
     left: 0;
     position: absolute; }
-  /* line 74, src/assets/scss/navigation/navigation.scss */
-  .navigation_tab:after {
+  /* line 76, src/assets/scss/navigation/navigation.scss */
+  .nav_tab:after {
     border-bottom: 20px solid transparent;
     border-left: 10px solid #eeeeee;
     border-right: 10px solid transparent;
@@ -260,9 +262,22 @@
     left: -1px;
     position: absolute;
     top: 0; }
-  /* line 88, src/assets/scss/navigation/navigation.scss */
-  .navigation_tab:first-of-type:after, .navigation_tab:first-of-type:before, .navigation_tab:last-of-type:after, .navigation_tab:last-of-type:before {
+  /* line 90, src/assets/scss/navigation/navigation.scss */
+  .nav_tab:first-of-type:after, .nav_tab:first-of-type:before, .nav_tab:last-of-type:after, .nav_tab:last-of-type:before {
     content: none; }
+
+/* line 97, src/assets/scss/navigation/navigation.scss */
+.nav-button_notifications {
+  background-color: #1681c1;
+  border-radius: 50px;
+  color: white;
+  font-size: 10px;
+  height: 16px;
+  line-height: 16px;
+  position: absolute;
+  right: 4px;
+  top: 4px;
+  width: 16px; }
 
 /* line 6, src/assets/scss/index.scss */
 body {
