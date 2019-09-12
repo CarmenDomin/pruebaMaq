@@ -36,6 +36,7 @@
 .information_disclaimer {
   display: table;
   font-size: 14px;
+  font-weight: bold;
   text-align: right;
   width: 100%;
 }
@@ -43,8 +44,13 @@
 // small viewport
 @include small-viewport {
   .information_content {
+    font-size: 16px;
     margin: 40px;
     width: 373px;
+
+    h1 {
+      font-size: 24px;
+    }
   }
 
   .information_figure {

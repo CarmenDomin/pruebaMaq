@@ -3,20 +3,21 @@ body {
   box-sizing: border-box;
   display: flex;
   flex-direction: row;
+  font-family: Open Sans;
   margin: 0; }
 
-/* line 10, src/assets/scss/core/layout.scss */
+/* line 11, src/assets/scss/core/layout.scss */
 nav {
   position: absolute; }
 
-/* line 14, src/assets/scss/core/layout.scss */
+/* line 15, src/assets/scss/core/layout.scss */
 aside,
 section {
   height: calc(100vh - 40px - 30px - 40px);
   margin-top: 70px;
   margin-bottom: 40px; }
 
-/* line 21, src/assets/scss/core/layout.scss */
+/* line 22, src/assets/scss/core/layout.scss */
 section {
   flex-grow: 1; }
 
@@ -55,15 +56,20 @@ section {
 .information_disclaimer {
   display: table;
   font-size: 14px;
+  font-weight: bold;
   text-align: right;
   width: 100%; }
 
 @media only screen and (max-width: 1024px) {
-  /* line 45, src/assets/scss/information/information.scss */
+  /* line 46, src/assets/scss/information/information.scss */
   .information_content {
+    font-size: 16px;
     margin: 40px;
     width: 373px; }
-  /* line 50, src/assets/scss/information/information.scss */
+    /* line 51, src/assets/scss/information/information.scss */
+    .information_content h1 {
+      font-size: 24px; }
+  /* line 56, src/assets/scss/information/information.scss */
   .information_figure {
     background-position: 50%; } }
 
