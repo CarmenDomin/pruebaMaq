@@ -8,6 +8,7 @@ $width-arrow: 10px;
   display: flex;
   height: $navigation-height;
   line-height: $navigation-height;
+  width: 100%;
 }
 
 .nav_button,
@@ -47,17 +48,16 @@ $width-arrow: 10px;
   text-decoration: none;
   text-overflow: ellipsis;
   white-space: nowrap;
-  min-width: 440px - $width-arrow;
+  width: 440px - $width-arrow;
 
   &:nth-last-of-type(-n+2) {
     background: $white;
     border-right-width: 1px;
-    min-width: 440px;
+    width: 440px;
   }
 
   &:nth-last-of-type(2) {
     flex-grow: 1;
-    min-width: 10px;
   }
 
   &:before {

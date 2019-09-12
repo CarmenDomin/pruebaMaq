@@ -1,8 +1,31 @@
+/* line 3, src/assets/scss/core/layout.scss */
+body {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  margin: 0; }
+
+/* line 10, src/assets/scss/core/layout.scss */
+nav {
+  position: absolute; }
+
+/* line 14, src/assets/scss/core/layout.scss */
+aside,
+section {
+  height: calc(100vh - 40px - 30px - 40px);
+  margin-top: 70px;
+  margin-bottom: 40px; }
+
+/* line 21, src/assets/scss/core/layout.scss */
+section {
+  flex-grow: 1; }
+
 /* line 3, src/assets/scss/information/information.scss */
 .information {
+  padding-left: 20px;
   position: relative; }
 
-/* line 7, src/assets/scss/information/information.scss */
+/* line 8, src/assets/scss/information/information.scss */
 .information_content {
   background-color: #0082c5;
   border-radius: 30px;
@@ -15,12 +38,12 @@
   padding: 40px;
   position: absolute;
   width: 480px; }
-  /* line 20, src/assets/scss/information/information.scss */
+  /* line 21, src/assets/scss/information/information.scss */
   .information_content h1 {
     font-size: 30px;
     margin-top: 0; }
 
-/* line 26, src/assets/scss/information/information.scss */
+/* line 27, src/assets/scss/information/information.scss */
 .information_figure {
   background: url("/assets/img/background.jpg");
   background-clip: content-box;
@@ -28,38 +51,21 @@
   background-size: cover;
   height: 100%; }
 
-/* line 34, src/assets/scss/information/information.scss */
+/* line 35, src/assets/scss/information/information.scss */
 .information_disclaimer {
   display: table;
   font-size: 14px;
   text-align: right;
   width: 100%; }
 
-/* line 3, src/assets/scss/layout/layout.scss */
-.layout {
-  height: calc(100vh - 40px);
-  display: flex;
-  flex-direction: row;
-  padding: 30px 0 40px 20px;
-  box-sizing: border-box; }
-
-/* line 11, src/assets/scss/layout/layout.scss */
-.layout_menu {
-  width: 100px; }
-
-/* line 15, src/assets/scss/layout/layout.scss */
-.layout_content {
-  flex-grow: 1; }
-
 /* line 4, src/assets/scss/menu/menu.scss */
 .menu {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  margin-bottom: 100px;
   padding: 0 20px; }
 
-/* line 12, src/assets/scss/menu/menu.scss */
+/* line 11, src/assets/scss/menu/menu.scss */
 .menu_button {
   align-items: center;
   bottom: 0;
@@ -68,7 +74,7 @@
   padding-bottom: 15px;
   position: absolute; }
 
-/* line 21, src/assets/scss/menu/menu.scss */
+/* line 20, src/assets/scss/menu/menu.scss */
 .menu_button--down,
 .menu_button--up {
   transition: border-color .3s ease-out;
@@ -80,26 +86,27 @@
   cursor: pointer;
   margin: 5px 0;
   outline: none; }
-  /* line 34, src/assets/scss/menu/menu.scss */
+  /* line 33, src/assets/scss/menu/menu.scss */
   .menu_button--down:hover,
   .menu_button--up:hover {
     border-color: #bbbbbb; }
 
-/* line 39, src/assets/scss/menu/menu.scss */
+/* line 38, src/assets/scss/menu/menu.scss */
 .menu_button--down {
   background-image: url("/assets/img/icon-down.svg");
   height: 60px;
   width: 60px; }
 
-/* line 45, src/assets/scss/menu/menu.scss */
+/* line 44, src/assets/scss/menu/menu.scss */
 .menu_button--up {
   background-image: url("/assets/img/icon-up.svg");
   height: 40px;
   width: 40px; }
 
-/* line 51, src/assets/scss/menu/menu.scss */
+/* line 50, src/assets/scss/menu/menu.scss */
 .menu_task {
   height: 100%;
+  margin-bottom: 100px;
   position: relative; }
   /* line 55, src/assets/scss/menu/menu.scss */
   .menu_task > ul {
@@ -242,9 +249,10 @@
 .nav {
   display: flex;
   height: 40px;
-  line-height: 40px; }
+  line-height: 40px;
+  width: 100%; }
 
-/* line 13, src/assets/scss/navigation/navigation.scss */
+/* line 14, src/assets/scss/navigation/navigation.scss */
 .nav_button,
 .nav_tab {
   transition: border-color .3s ease-out;
@@ -252,22 +260,22 @@
   border: 1px solid #bbbbbb;
   color: #777777;
   position: relative; }
-  /* line 22, src/assets/scss/navigation/navigation.scss */
+  /* line 23, src/assets/scss/navigation/navigation.scss */
   .nav_button:hover,
   .nav_tab:hover {
     border-color: #777777; }
-  /* line 27, src/assets/scss/navigation/navigation.scss */
+  /* line 28, src/assets/scss/navigation/navigation.scss */
   .nav_button:hover + .nav_tab:before,
   .nav_tab:hover + .nav_tab:before {
     border-left-color: #777777; }
 
-/* line 33, src/assets/scss/navigation/navigation.scss */
+/* line 34, src/assets/scss/navigation/navigation.scss */
 .nav_button {
   cursor: pointer;
   min-width: 40px;
   outline: none; }
 
-/* line 39, src/assets/scss/navigation/navigation.scss */
+/* line 40, src/assets/scss/navigation/navigation.scss */
 .nav_tab {
   background: #eeeeee;
   border-width: 1px 0;
@@ -279,16 +287,15 @@
   text-decoration: none;
   text-overflow: ellipsis;
   white-space: nowrap;
-  min-width: 430px; }
-  /* line 52, src/assets/scss/navigation/navigation.scss */
+  width: 430px; }
+  /* line 53, src/assets/scss/navigation/navigation.scss */
   .nav_tab:nth-last-of-type(-n+2) {
     background: white;
     border-right-width: 1px;
-    min-width: 440px; }
-  /* line 58, src/assets/scss/navigation/navigation.scss */
+    width: 440px; }
+  /* line 59, src/assets/scss/navigation/navigation.scss */
   .nav_tab:nth-last-of-type(2) {
-    flex-grow: 1;
-    min-width: 10px; }
+    flex-grow: 1; }
   /* line 63, src/assets/scss/navigation/navigation.scss */
   .nav_tab:before {
     transition: border-color .3s ease-out;
@@ -327,7 +334,3 @@
   right: 4px;
   top: 4px;
   width: 16px; }
-
-/* line 6, src/assets/scss/index.scss */
-body {
-  margin: 0; }

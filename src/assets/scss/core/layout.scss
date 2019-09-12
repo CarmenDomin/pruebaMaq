@@ -1,0 +1,23 @@
+@import './dimensions.scss';
+
+body {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+}
+
+nav {
+  position: absolute;
+}
+
+aside,
+section {
+  height: calc(100vh - #{$navigation-height} - #{$margin-top-content} - #{$margin-bottom-content});
+  margin-top: $navigation-height + $margin-top-content;
+  margin-bottom: $margin-bottom-content;
+}
+
+section {
+  flex-grow: 1;
+}
