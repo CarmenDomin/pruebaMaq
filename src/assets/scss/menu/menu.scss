@@ -7,155 +7,203 @@
   flex-direction: column;
   margin-bottom: 100px;
   padding: 0 20px;
-
-  button {
-    @include transition('border-color');
-
-    background-position: center center;
-    background-repeat: no-repeat;
-    border: 2px solid transparent;
-    border-radius: 50px;
-    cursor: pointer;
-    outline: none;
-
-    &:hover {
-      border-color: $grey;
-    }
-  }
 }
 
-.menu_action {
+.menu_button {
   align-items: center;
   bottom: 0;
   display: flex;
   flex-direction: column;
-  padding: 20px 0;
+  padding-bottom: 15px;
   position: absolute;
 }
 
-.menu_action--down {
+.menu_button--down,
+.menu_button--up {
+  @include transition('border-color');
+
   background-color: $blue-dark;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 5px 0;
+  outline: none;
+
+  &:hover {
+    border-color: $grey;
+  }
+}
+
+.menu_button--down {
   background-image: url("/assets/img/icon-down.svg");
   height: 60px;
   width: 60px;
 }
 
-.menu_action--scroll {
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff);
-  height: 80px;
-  width: 60px;
-
-  &:after {
-    background: url("/assets/img/icon-scroll.svg") center center no-repeat;
-    content: '';
-    height: 60px;
-    position: absolute;
-    top: 50px;
-    width: 60px;
-  }
-}
-
-.menu_action--up {
-  background-color: $blue-dark;
+.menu_button--up {
   background-image: url("/assets/img/icon-up.svg");
   height: 40px;
-  margin: 10px 0;
   width: 40px;
 }
 
 .menu_task {
-  background-color: $grey-light;
-  background-image: url("/assets/img/icon-circle.svg");
-  height: 40px;
-  width: 40px;
+  height: 100%;
+  position: relative;
 
-  &.menu_task--flag {
-    background-image: url("/assets/img/icon-flag.svg");
-  }
+  > ul {
+    list-style: none;
+    margin: 0;
+    max-height: 100%;
+    overflow: scroll;
+    padding: 0;
 
-  &.menu_task--star {
-    background-image: url("/assets/img/icon-star.svg");
-  }
+    > li {
+      background-color: $grey-light;
+      background-position: center center;
+      background-repeat: no-repeat;
+      border-radius: 50%;
+      box-sizing: border-box;
+      height: 40px;
+      position: relative;
+      text-align: center;
+      width: 40px;
 
-  &.menu_task--story {
-    background-image: url("/assets/img/icon-story.svg");
-  }
+      &:after {
+        background: $grey-light;
+        content: '';
+        height: 3px;
+        position: absolute;
+        top: 20px;
+        width: 45px;
+        z-index: -1;
+      }
 
-  &:after {
-    background-color: $grey-light;
-    content: '';
-    height: 3px;
-    position: absolute;
-    width: 45px;
-    z-index: -1;
-  }
+      &:nth-last-child(1):after {
+        content: none;
+      }
 
-  &:nth-last-of-type(1):after {
-    content: none;
-  }
+      &:nth-child(even) {
+        margin-left: 20px;
 
-  &:nth-of-type(even) {
-    margin-left: 20px;
+        &:after {
+          transform: rotate(120deg);
+          transform-origin: 0px;
+        }
+      }
 
-    &:after {
-      transform: rotate(120deg);
-      transform-origin: 0px;
+      &:nth-child(odd):after {
+        transform: rotate(66deg);
+        transform-origin: 0px;
+      }
+
+      &.menu_task--seen {
+        background-color: $green;
+
+        &:after {
+          background: $green;
+        }
+      }
+
+      &.menu_task--seeing {
+        background-color: $green-dark;
+
+        &:after {
+          background: $green-dark;
+        }
+      }
+
+      &.menu_task--pending {
+        background-color: $orange;
+
+        &:after {
+          background: $orange;
+        }
+      }
     }
-  }
-
-  &:nth-of-type(odd):after {
-    transform: rotate(60deg);
-    transform-origin: 0px;
   }
 }
 
-.menu_task--seen {
-  background-color: $green;
-  background-image: url("/assets/img/icon-circle--seen.svg");
+.menu_task--circle {
+  background-image: url("/assets/img/icon-circle.svg");
 
-  &.menu_task--flag {
+  &.menu_task--seen {
+    background-image: url("/assets/img/icon-circle--seen.svg");
+  }
+
+  &.menu_task--seeing {
+    background-image: url("/assets/img/icon-circle--seeing.svg");
+  }
+
+  &.menu_task--pending {
+    background-image: url("/assets/img/icon-circle--pending.svg");
+  }
+}
+
+.menu_task--flag {
+  background-image: url("/assets/img/icon-flag.svg");
+
+  &.menu_task--seen {
     background-image: url("/assets/img/icon-flag--seen.svg");
   }
 
-  &.menu_task--star {
-    background-image: url("/assets/img/icon-star--seen.svg");
-  }
-
-  &.menu_task--story {
-    background-image: url("/assets/img/icon-story--seen.svg");
-  }
-}
-
-.menu_task--seeing {
-  background-color: $green-dark;
-  background-image: url("/assets/img/icon-circle--seeing.svg");
-
-  &.menu_task--flag {
+  &.menu_task--seeing {
     background-image: url("/assets/img/icon-flag--seeing.svg");
   }
 
-  &.menu_task--star {
-    background-image: url("/assets/img/icon-star--seeing.svg");
-  }
-
-  &.menu_task--story {
-    background-image: url("/assets/img/icon-story--seeing.svg");
+  &.menu_task--pending {
+    background-image: url("/assets/img/icon-flag--pending.svg");
   }
 }
 
-.menu_task--pending {
-  background-color: $orange;
-  background-image: url("/assets/img/icon-circle--pending.svg");
+.menu_task--star {
+  background-image: url("/assets/img/icon-star.svg");
 
-  &.menu_task--flag {
-    background-image: url("/assets/img/icon-flag--pending.svg");
+  &.menu_task--seen {
+    background-image: url("/assets/img/icon-star--seen.svg");
   }
 
-  &.menu_task--star {
+  &.menu_task--seeing {
+    background-image: url("/assets/img/icon-star--seeing.svg");
+  }
+
+  &.menu_task--pending {
     background-image: url("/assets/img/icon-star--pending.svg");
   }
+}
 
-  &.menu_task--story {
+.menu_task--story {
+  background-image: url("/assets/img/icon-story.svg");
+
+  &.menu_task--seen {
+    background-image: url("/assets/img/icon-story--seen.svg");
+  }
+
+  &.menu_task--seeing {
+    background-image: url("/assets/img/icon-story--seeing.svg");
+  }
+
+  &.menu_task--pending {
     background-image: url("/assets/img/icon-story--pending.svg");
+  }
+}
+
+.menu_task--scroll {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff);
+  height: 80px;
+  position: absolute;
+  bottom: 0;
+  width: 60px;
+
+  &:after {
+    background: transparent url("/assets/img/icon-scroll.svg") center center no-repeat;
+    content: '';
+    height: 18px;
+    position: absolute;
+    top: 42px;
+    transform: translateX(-50%);
+    left: 50%;
+    width: 18px;
   }
 }

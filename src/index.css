@@ -58,136 +58,178 @@
   flex-direction: column;
   margin-bottom: 100px;
   padding: 0 20px; }
-  /* line 11, src/assets/scss/menu/menu.scss */
-  .menu button {
-    transition: border-color .3s ease-out;
-    background-position: center center;
-    background-repeat: no-repeat;
-    border: 2px solid transparent;
-    border-radius: 50px;
-    cursor: pointer;
-    outline: none; }
-    /* line 21, src/assets/scss/menu/menu.scss */
-    .menu button:hover {
-      border-color: #bbbbbb; }
 
-/* line 27, src/assets/scss/menu/menu.scss */
-.menu_action {
+/* line 12, src/assets/scss/menu/menu.scss */
+.menu_button {
   align-items: center;
   bottom: 0;
   display: flex;
   flex-direction: column;
-  padding: 20px 0;
+  padding-bottom: 15px;
   position: absolute; }
 
-/* line 36, src/assets/scss/menu/menu.scss */
-.menu_action--down {
+/* line 21, src/assets/scss/menu/menu.scss */
+.menu_button--down,
+.menu_button--up {
+  transition: border-color .3s ease-out;
   background-color: #1681c1;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border: 2px solid transparent;
+  border-radius: 50%;
+  cursor: pointer;
+  margin: 5px 0;
+  outline: none; }
+  /* line 34, src/assets/scss/menu/menu.scss */
+  .menu_button--down:hover,
+  .menu_button--up:hover {
+    border-color: #bbbbbb; }
+
+/* line 39, src/assets/scss/menu/menu.scss */
+.menu_button--down {
   background-image: url("/assets/img/icon-down.svg");
   height: 60px;
   width: 60px; }
 
-/* line 43, src/assets/scss/menu/menu.scss */
-.menu_action--scroll {
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff);
-  height: 80px;
-  width: 60px; }
-  /* line 48, src/assets/scss/menu/menu.scss */
-  .menu_action--scroll:after {
-    background: url("/assets/img/icon-scroll.svg") center center no-repeat;
-    content: '';
-    height: 60px;
-    position: absolute;
-    top: 50px;
-    width: 60px; }
-
-/* line 58, src/assets/scss/menu/menu.scss */
-.menu_action--up {
-  background-color: #1681c1;
+/* line 45, src/assets/scss/menu/menu.scss */
+.menu_button--up {
   background-image: url("/assets/img/icon-up.svg");
   height: 40px;
-  margin: 10px 0;
   width: 40px; }
 
-/* line 66, src/assets/scss/menu/menu.scss */
+/* line 51, src/assets/scss/menu/menu.scss */
 .menu_task {
-  background-color: #eeeeee;
-  background-image: url("/assets/img/icon-circle.svg");
-  height: 40px;
-  width: 40px; }
-  /* line 72, src/assets/scss/menu/menu.scss */
-  .menu_task.menu_task--flag {
-    background-image: url("/assets/img/icon-flag.svg"); }
-  /* line 76, src/assets/scss/menu/menu.scss */
-  .menu_task.menu_task--star {
-    background-image: url("/assets/img/icon-star.svg"); }
-  /* line 80, src/assets/scss/menu/menu.scss */
-  .menu_task.menu_task--story {
-    background-image: url("/assets/img/icon-story.svg"); }
-  /* line 84, src/assets/scss/menu/menu.scss */
-  .menu_task:after {
-    background-color: #eeeeee;
-    content: '';
-    height: 3px;
-    position: absolute;
-    width: 45px;
-    z-index: -1; }
-  /* line 93, src/assets/scss/menu/menu.scss */
-  .menu_task:nth-last-of-type(1):after {
-    content: none; }
-  /* line 97, src/assets/scss/menu/menu.scss */
-  .menu_task:nth-of-type(even) {
-    margin-left: 20px; }
-    /* line 100, src/assets/scss/menu/menu.scss */
-    .menu_task:nth-of-type(even):after {
-      transform: rotate(120deg);
-      transform-origin: 0px; }
-  /* line 106, src/assets/scss/menu/menu.scss */
-  .menu_task:nth-of-type(odd):after {
-    transform: rotate(60deg);
-    transform-origin: 0px; }
+  height: 100%;
+  position: relative; }
+  /* line 55, src/assets/scss/menu/menu.scss */
+  .menu_task > ul {
+    list-style: none;
+    margin: 0;
+    max-height: 100%;
+    overflow: scroll;
+    padding: 0; }
+    /* line 62, src/assets/scss/menu/menu.scss */
+    .menu_task > ul > li {
+      background-color: #eeeeee;
+      background-position: center center;
+      background-repeat: no-repeat;
+      border-radius: 50%;
+      box-sizing: border-box;
+      height: 40px;
+      position: relative;
+      text-align: center;
+      width: 40px; }
+      /* line 73, src/assets/scss/menu/menu.scss */
+      .menu_task > ul > li:after {
+        background: #eeeeee;
+        content: '';
+        height: 3px;
+        position: absolute;
+        top: 20px;
+        width: 45px;
+        z-index: -1; }
+      /* line 83, src/assets/scss/menu/menu.scss */
+      .menu_task > ul > li:nth-last-child(1):after {
+        content: none; }
+      /* line 87, src/assets/scss/menu/menu.scss */
+      .menu_task > ul > li:nth-child(even) {
+        margin-left: 20px; }
+        /* line 90, src/assets/scss/menu/menu.scss */
+        .menu_task > ul > li:nth-child(even):after {
+          transform: rotate(120deg);
+          transform-origin: 0px; }
+      /* line 96, src/assets/scss/menu/menu.scss */
+      .menu_task > ul > li:nth-child(odd):after {
+        transform: rotate(66deg);
+        transform-origin: 0px; }
+      /* line 101, src/assets/scss/menu/menu.scss */
+      .menu_task > ul > li.menu_task--seen {
+        background-color: #78af45; }
+        /* line 104, src/assets/scss/menu/menu.scss */
+        .menu_task > ul > li.menu_task--seen:after {
+          background: #78af45; }
+      /* line 109, src/assets/scss/menu/menu.scss */
+      .menu_task > ul > li.menu_task--seeing {
+        background-color: #4c6f2c; }
+        /* line 112, src/assets/scss/menu/menu.scss */
+        .menu_task > ul > li.menu_task--seeing:after {
+          background: #4c6f2c; }
+      /* line 117, src/assets/scss/menu/menu.scss */
+      .menu_task > ul > li.menu_task--pending {
+        background-color: #ecab41; }
+        /* line 120, src/assets/scss/menu/menu.scss */
+        .menu_task > ul > li.menu_task--pending:after {
+          background: #ecab41; }
 
-/* line 112, src/assets/scss/menu/menu.scss */
-.menu_task--seen {
-  background-color: #78af45;
-  background-image: url("/assets/img/icon-circle--seen.svg"); }
-  /* line 116, src/assets/scss/menu/menu.scss */
-  .menu_task--seen.menu_task--flag {
+/* line 128, src/assets/scss/menu/menu.scss */
+.menu_task--circle {
+  background-image: url("/assets/img/icon-circle.svg"); }
+  /* line 131, src/assets/scss/menu/menu.scss */
+  .menu_task--circle.menu_task--seen {
+    background-image: url("/assets/img/icon-circle--seen.svg"); }
+  /* line 135, src/assets/scss/menu/menu.scss */
+  .menu_task--circle.menu_task--seeing {
+    background-image: url("/assets/img/icon-circle--seeing.svg"); }
+  /* line 139, src/assets/scss/menu/menu.scss */
+  .menu_task--circle.menu_task--pending {
+    background-image: url("/assets/img/icon-circle--pending.svg"); }
+
+/* line 144, src/assets/scss/menu/menu.scss */
+.menu_task--flag {
+  background-image: url("/assets/img/icon-flag.svg"); }
+  /* line 147, src/assets/scss/menu/menu.scss */
+  .menu_task--flag.menu_task--seen {
     background-image: url("/assets/img/icon-flag--seen.svg"); }
-  /* line 120, src/assets/scss/menu/menu.scss */
-  .menu_task--seen.menu_task--star {
-    background-image: url("/assets/img/icon-star--seen.svg"); }
-  /* line 124, src/assets/scss/menu/menu.scss */
-  .menu_task--seen.menu_task--story {
-    background-image: url("/assets/img/icon-story--seen.svg"); }
-
-/* line 129, src/assets/scss/menu/menu.scss */
-.menu_task--seeing {
-  background-color: #4c6f2c;
-  background-image: url("/assets/img/icon-circle--seeing.svg"); }
-  /* line 133, src/assets/scss/menu/menu.scss */
-  .menu_task--seeing.menu_task--flag {
+  /* line 151, src/assets/scss/menu/menu.scss */
+  .menu_task--flag.menu_task--seeing {
     background-image: url("/assets/img/icon-flag--seeing.svg"); }
-  /* line 137, src/assets/scss/menu/menu.scss */
-  .menu_task--seeing.menu_task--star {
-    background-image: url("/assets/img/icon-star--seeing.svg"); }
-  /* line 141, src/assets/scss/menu/menu.scss */
-  .menu_task--seeing.menu_task--story {
-    background-image: url("/assets/img/icon-story--seeing.svg"); }
-
-/* line 146, src/assets/scss/menu/menu.scss */
-.menu_task--pending {
-  background-color: #ecab41;
-  background-image: url("/assets/img/icon-circle--pending.svg"); }
-  /* line 150, src/assets/scss/menu/menu.scss */
-  .menu_task--pending.menu_task--flag {
+  /* line 155, src/assets/scss/menu/menu.scss */
+  .menu_task--flag.menu_task--pending {
     background-image: url("/assets/img/icon-flag--pending.svg"); }
-  /* line 154, src/assets/scss/menu/menu.scss */
-  .menu_task--pending.menu_task--star {
+
+/* line 160, src/assets/scss/menu/menu.scss */
+.menu_task--star {
+  background-image: url("/assets/img/icon-star.svg"); }
+  /* line 163, src/assets/scss/menu/menu.scss */
+  .menu_task--star.menu_task--seen {
+    background-image: url("/assets/img/icon-star--seen.svg"); }
+  /* line 167, src/assets/scss/menu/menu.scss */
+  .menu_task--star.menu_task--seeing {
+    background-image: url("/assets/img/icon-star--seeing.svg"); }
+  /* line 171, src/assets/scss/menu/menu.scss */
+  .menu_task--star.menu_task--pending {
     background-image: url("/assets/img/icon-star--pending.svg"); }
-  /* line 158, src/assets/scss/menu/menu.scss */
-  .menu_task--pending.menu_task--story {
+
+/* line 176, src/assets/scss/menu/menu.scss */
+.menu_task--story {
+  background-image: url("/assets/img/icon-story.svg"); }
+  /* line 179, src/assets/scss/menu/menu.scss */
+  .menu_task--story.menu_task--seen {
+    background-image: url("/assets/img/icon-story--seen.svg"); }
+  /* line 183, src/assets/scss/menu/menu.scss */
+  .menu_task--story.menu_task--seeing {
+    background-image: url("/assets/img/icon-story--seeing.svg"); }
+  /* line 187, src/assets/scss/menu/menu.scss */
+  .menu_task--story.menu_task--pending {
     background-image: url("/assets/img/icon-story--pending.svg"); }
+
+/* line 192, src/assets/scss/menu/menu.scss */
+.menu_task--scroll {
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff);
+  height: 80px;
+  position: absolute;
+  bottom: 0;
+  width: 60px; }
+  /* line 199, src/assets/scss/menu/menu.scss */
+  .menu_task--scroll:after {
+    background: transparent url("/assets/img/icon-scroll.svg") center center no-repeat;
+    content: '';
+    height: 18px;
+    position: absolute;
+    top: 42px;
+    transform: translateX(-50%);
+    left: 50%;
+    width: 18px; }
 
 /* line 7, src/assets/scss/navigation/navigation.scss */
 .nav {
