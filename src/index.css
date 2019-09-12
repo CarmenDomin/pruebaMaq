@@ -129,98 +129,32 @@
         width: 45px;
         z-index: -1; }
       /* line 83, src/assets/scss/menu/menu.scss */
-      .menu_task > ul > li:nth-last-child(1):after {
-        content: none; }
-      /* line 87, src/assets/scss/menu/menu.scss */
       .menu_task > ul > li:nth-child(even) {
         margin-left: 20px; }
-        /* line 90, src/assets/scss/menu/menu.scss */
+        /* line 86, src/assets/scss/menu/menu.scss */
         .menu_task > ul > li:nth-child(even):after {
           transform: rotate(120deg);
           transform-origin: 0px; }
-      /* line 96, src/assets/scss/menu/menu.scss */
+      /* line 92, src/assets/scss/menu/menu.scss */
       .menu_task > ul > li:nth-child(odd):after {
         transform: rotate(66deg);
         transform-origin: 0px; }
+      /* line 97, src/assets/scss/menu/menu.scss */
+      .menu_task > ul > li:nth-last-child(-n+2):after {
+        content: none; }
       /* line 101, src/assets/scss/menu/menu.scss */
-      .menu_task > ul > li.menu_task--seen {
-        background-color: #78af45; }
-        /* line 104, src/assets/scss/menu/menu.scss */
-        .menu_task > ul > li.menu_task--seen:after {
-          background: #78af45; }
-      /* line 109, src/assets/scss/menu/menu.scss */
-      .menu_task > ul > li.menu_task--seeing {
-        background-color: #4c6f2c; }
-        /* line 112, src/assets/scss/menu/menu.scss */
-        .menu_task > ul > li.menu_task--seeing:after {
-          background: #4c6f2c; }
-      /* line 117, src/assets/scss/menu/menu.scss */
-      .menu_task > ul > li.menu_task--pending {
-        background-color: #ecab41; }
-        /* line 120, src/assets/scss/menu/menu.scss */
-        .menu_task > ul > li.menu_task--pending:after {
-          background: #ecab41; }
+      .menu_task > ul > li:nth-last-child(1) {
+        background-color: transparent;
+        height: 60px; }
 
-/* line 128, src/assets/scss/menu/menu.scss */
-.menu_task--circle {
-  background-image: url("/assets/img/icon-circle.svg"); }
-  /* line 131, src/assets/scss/menu/menu.scss */
-  .menu_task--circle.menu_task--seen {
-    background-image: url("/assets/img/icon-circle--seen.svg"); }
-  /* line 135, src/assets/scss/menu/menu.scss */
-  .menu_task--circle.menu_task--seeing {
-    background-image: url("/assets/img/icon-circle--seeing.svg"); }
-  /* line 139, src/assets/scss/menu/menu.scss */
-  .menu_task--circle.menu_task--pending {
-    background-image: url("/assets/img/icon-circle--pending.svg"); }
-
-/* line 144, src/assets/scss/menu/menu.scss */
-.menu_task--flag {
-  background-image: url("/assets/img/icon-flag.svg"); }
-  /* line 147, src/assets/scss/menu/menu.scss */
-  .menu_task--flag.menu_task--seen {
-    background-image: url("/assets/img/icon-flag--seen.svg"); }
-  /* line 151, src/assets/scss/menu/menu.scss */
-  .menu_task--flag.menu_task--seeing {
-    background-image: url("/assets/img/icon-flag--seeing.svg"); }
-  /* line 155, src/assets/scss/menu/menu.scss */
-  .menu_task--flag.menu_task--pending {
-    background-image: url("/assets/img/icon-flag--pending.svg"); }
-
-/* line 160, src/assets/scss/menu/menu.scss */
-.menu_task--star {
-  background-image: url("/assets/img/icon-star.svg"); }
-  /* line 163, src/assets/scss/menu/menu.scss */
-  .menu_task--star.menu_task--seen {
-    background-image: url("/assets/img/icon-star--seen.svg"); }
-  /* line 167, src/assets/scss/menu/menu.scss */
-  .menu_task--star.menu_task--seeing {
-    background-image: url("/assets/img/icon-star--seeing.svg"); }
-  /* line 171, src/assets/scss/menu/menu.scss */
-  .menu_task--star.menu_task--pending {
-    background-image: url("/assets/img/icon-star--pending.svg"); }
-
-/* line 176, src/assets/scss/menu/menu.scss */
-.menu_task--story {
-  background-image: url("/assets/img/icon-story.svg"); }
-  /* line 179, src/assets/scss/menu/menu.scss */
-  .menu_task--story.menu_task--seen {
-    background-image: url("/assets/img/icon-story--seen.svg"); }
-  /* line 183, src/assets/scss/menu/menu.scss */
-  .menu_task--story.menu_task--seeing {
-    background-image: url("/assets/img/icon-story--seeing.svg"); }
-  /* line 187, src/assets/scss/menu/menu.scss */
-  .menu_task--story.menu_task--pending {
-    background-image: url("/assets/img/icon-story--pending.svg"); }
-
-/* line 192, src/assets/scss/menu/menu.scss */
+/* line 109, src/assets/scss/menu/menu.scss */
 .menu_task--scroll {
   background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff);
   height: 80px;
   position: absolute;
   bottom: 0;
   width: 60px; }
-  /* line 199, src/assets/scss/menu/menu.scss */
+  /* line 116, src/assets/scss/menu/menu.scss */
   .menu_task--scroll:after {
     background: transparent url("/assets/img/icon-scroll.svg") center center no-repeat;
     content: '';
@@ -230,6 +164,79 @@
     transform: translateX(-50%);
     left: 50%;
     width: 18px; }
+
+/* line 129, src/assets/scss/menu/menu.scss */
+.menu_task--seen {
+  background-color: #78af45 !important; }
+  /* line 132, src/assets/scss/menu/menu.scss */
+  .menu_task--seen:after {
+    background: #78af45 !important; }
+
+/* line 137, src/assets/scss/menu/menu.scss */
+.menu_task--seeing {
+  background-color: #4c6f2c !important; }
+  /* line 140, src/assets/scss/menu/menu.scss */
+  .menu_task--seeing:after {
+    background: #4c6f2c !important; }
+
+/* line 145, src/assets/scss/menu/menu.scss */
+.menu_task--pending {
+  background-color: #ecab41 !important; }
+  /* line 148, src/assets/scss/menu/menu.scss */
+  .menu_task--pending:after {
+    background: #ecab41 !important; }
+
+/* line 154, src/assets/scss/menu/menu.scss */
+.menu_task--circle {
+  background-image: url("/assets/img/icon-circle.svg"); }
+  /* line 157, src/assets/scss/menu/menu.scss */
+  .menu_task--circle.menu_task--seen {
+    background-image: url("/assets/img/icon-circle--seen.svg"); }
+  /* line 161, src/assets/scss/menu/menu.scss */
+  .menu_task--circle.menu_task--seeing {
+    background-image: url("/assets/img/icon-circle--seeing.svg"); }
+  /* line 165, src/assets/scss/menu/menu.scss */
+  .menu_task--circle.menu_task--pending {
+    background-image: url("/assets/img/icon-circle--pending.svg"); }
+
+/* line 170, src/assets/scss/menu/menu.scss */
+.menu_task--flag {
+  background-image: url("/assets/img/icon-flag.svg"); }
+  /* line 173, src/assets/scss/menu/menu.scss */
+  .menu_task--flag.menu_task--seen {
+    background-image: url("/assets/img/icon-flag--seen.svg"); }
+  /* line 177, src/assets/scss/menu/menu.scss */
+  .menu_task--flag.menu_task--seeing {
+    background-image: url("/assets/img/icon-flag--seeing.svg"); }
+  /* line 181, src/assets/scss/menu/menu.scss */
+  .menu_task--flag.menu_task--pending {
+    background-image: url("/assets/img/icon-flag--pending.svg"); }
+
+/* line 186, src/assets/scss/menu/menu.scss */
+.menu_task--star {
+  background-image: url("/assets/img/icon-star.svg"); }
+  /* line 189, src/assets/scss/menu/menu.scss */
+  .menu_task--star.menu_task--seen {
+    background-image: url("/assets/img/icon-star--seen.svg"); }
+  /* line 193, src/assets/scss/menu/menu.scss */
+  .menu_task--star.menu_task--seeing {
+    background-image: url("/assets/img/icon-star--seeing.svg"); }
+  /* line 197, src/assets/scss/menu/menu.scss */
+  .menu_task--star.menu_task--pending {
+    background-image: url("/assets/img/icon-star--pending.svg"); }
+
+/* line 202, src/assets/scss/menu/menu.scss */
+.menu_task--story {
+  background-image: url("/assets/img/icon-story.svg"); }
+  /* line 205, src/assets/scss/menu/menu.scss */
+  .menu_task--story.menu_task--seen {
+    background-image: url("/assets/img/icon-story--seen.svg"); }
+  /* line 209, src/assets/scss/menu/menu.scss */
+  .menu_task--story.menu_task--seeing {
+    background-image: url("/assets/img/icon-story--seeing.svg"); }
+  /* line 213, src/assets/scss/menu/menu.scss */
+  .menu_task--story.menu_task--pending {
+    background-image: url("/assets/img/icon-story--pending.svg"); }
 
 /* line 7, src/assets/scss/navigation/navigation.scss */
 .nav {
@@ -268,7 +275,7 @@
   font-size: 14px;
   overflow: hidden;
   position: relative;
-  padding-left: 20px;
+  padding: 0 20px;
   text-decoration: none;
   text-overflow: ellipsis;
   white-space: nowrap;
