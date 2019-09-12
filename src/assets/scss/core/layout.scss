@@ -13,9 +13,9 @@ nav {
 
 aside,
 section {
-  height: calc(100vh - #{$navigation-height} - #{$margin-top-content} - #{$margin-bottom-content});
-  margin-top: $navigation-height + $margin-top-content;
-  margin-bottom: $margin-bottom-content;
+  height: calc(100vh - #{$navigation-height} - 30px - 40px);
+  margin-top: $navigation-height + 30px;
+  margin-bottom: 40px;
 }
 
 section {
